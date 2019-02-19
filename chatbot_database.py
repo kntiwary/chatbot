@@ -37,7 +37,6 @@ def find_existing_score(pid):
         return False
 
 
-
 def acceptable(data):
     if len(data.split(' '))> 50 or len(data)< 1:
         return False
@@ -63,6 +62,7 @@ def find_parent(pid):
 
     except Exception as e:
         return False
+
 
 def transaction_bldr(sql):
     global sql_transaction
@@ -150,7 +150,7 @@ if __name__ == "__main__":
                                                        score)
                     else:
                         if parent_data:
-                            print("sql_insert_has_parent")
+                            print("sql_insert")
                             sql_insert_has_parent(comment_id, parent_id, parent_data, body, subreddit, created_utc,
                                                   score)
                             paired_rows += 1
